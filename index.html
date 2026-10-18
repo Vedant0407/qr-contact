@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Contact</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: transform 0.15s ease, filter 0.15s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn:hover {
+      filter: brightness(1.08);
+    }
+
+    /* 1. CALL BUTTON (Phone number + Call Icon) */
+    .btn-call {
+      background: #10b981;
+      color: #ffffff;
+    }
+
+    /* 2. WHATSAPP CHAT BUTTON */
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+
+    /* 3. INSTAGRAM BUTTON */
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+    }
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 1. PHONE NUMBER & CALL ICON -->
+    <a href="tel:+917224098359" id="call-link" class="btn btn-call">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span id="call-display">+91 72240 98359</span>
+    </a>
+
+    <!-- 2. WHATSAPP CHAT LINK -->
+    <a href="https://wa.me/917224098359" id="chat-link" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.83 2.41c-1.47 0-2.93-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.186 8.186 0 0 1-1.26-4.38c0-4.54 3.7-8.25 8.27-8.25zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+      </svg>
+      <span>WhatsApp Chat</span>
+    </a>
+
+    <!-- 3. INSTAGRAM LINK -->
+    <a href="https://instagram.com" id="insta-link" target="_blank" rel="noopener noreferrer" class="btn btn-instagram">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+
+  <script>
+    // Configured with user's number:
+    const DEFAULT_PHONE = "+91 72240 98359";
+    const DEFAULT_WHATSAPP = "917224098359";
+    const DEFAULT_INSTAGRAM = "https://instagram.com";
+
+    const params = new URLSearchParams(window.location.search);
+    const phone = params.get('phone') || DEFAULT_PHONE;
+    const wa = params.get('wa') || params.get('whatsapp') || DEFAULT_WHATSAPP;
+    const insta = params.get('insta') || params.get('instagram') || DEFAULT_INSTAGRAM;
+
+    // 1. Call Button
+    document.getElementById('call-display').textContent = phone;
+    document.getElementById('call-link').href = `tel:${phone.replace(/[^0-9+]/g, '')}`;
+
+    // 2. WhatsApp Button
+    const cleanWa = wa.replace(/[^0-9]/g, '');
+    document.getElementById('chat-link').href = `https://wa.me/${cleanWa}`;
+
+    // 3. Instagram Button
+    const cleanInsta = insta.startsWith('http') ? insta : `https://instagram.com/${insta.replace('@', '')}`;
+    document.getElementById('insta-link').href = cleanInsta;
+  </script>
+</body>
+</html>
