@@ -3,27 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Vedant | Get in Touch</title>
+  <title>Premeals | Fresh & Healthy Meal Bowls</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
-      --border: #e2e8f0;
-      --call-color: #059669;
-      --call-bg: #ecfdf5;
-      --call-border: #a7f3d0;
-      --wa-color: #15803d;
-      --wa-bg: #f0fdf4;
-      --wa-border: #bbf7d0;
-      --insta-color: #be185d;
-      --insta-bg: #fdf2f8;
-      --insta-border: #fbcfe8;
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text-main: #1c1917;
+      --text-muted: #78716c;
+      --primary: #ea580c;
+      --primary-hover: #c2410c;
+      --primary-light: #fff7ed;
+      --border: #f0ede8;
     }
 
     * {
@@ -35,234 +28,249 @@
     }
 
     body {
+      background: var(--bg);
+      color: var(--text-main);
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 0%, #f1f5f9 0%, #f8fafc 60%, #e2e8f0 100%);
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 380px;
-      background: var(--card-bg);
-      border-radius: 28px;
-      padding: 32px 24px;
-      box-shadow: 
-        0 1px 3px rgba(0, 0, 0, 0.05),
-        0 20px 40px -15px rgba(15, 23, 42, 0.08),
-        0 0 0 1px rgba(226, 232, 240, 0.8);
-      display: flex;
-      flex-direction: column;
-      animation: slideUp 0.5s ease-out;
-    }
-
-    /* Owner / About Section */
-    .owner-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      margin-bottom: 24px;
     }
 
-    .avatar-wrapper {
-      position: relative;
-      margin-bottom: 14px;
-    }
-
-    .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
-      color: #ffffff;
-      font-size: 2rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.35);
-      border: 3px solid #ffffff;
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: 2px;
-      right: 2px;
-      width: 16px;
-      height: 16px;
-      background: #10b981;
-      border: 3px solid #ffffff;
-      border-radius: 50%;
-    }
-
-    .owner-name {
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--text-main);
-      letter-spacing: -0.02em;
-    }
-
-    .owner-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-      padding: 3px 10px;
-      background: #f1f5f9;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    .owner-badge .dot {
-      width: 6px;
-      height: 6px;
-      background: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
-    }
-
-    .owner-about {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text-secondary);
-      margin-top: 12px;
-      padding: 0 4px;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
+    /* 1. NAVBAR */
+    .navbar {
       width: 100%;
-      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
 
-    /* Actions List */
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .btn {
+    .nav-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 18px;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      position: relative;
-      border: 1.5px solid transparent;
+      color: var(--text-main);
     }
 
-    .btn:active {
-      transform: scale(0.98);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 14px;
-      flex-shrink: 0;
-      transition: transform 0.2s;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
     }
 
-    .btn:hover .btn-icon {
-      transform: scale(1.05);
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #1c1917;
     }
 
-    .btn-icon svg {
-      width: 22px;
-      height: 22px;
+    .brand-name span {
+      color: #ea580c;
     }
 
-    .btn-content {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .btn-label {
-      font-size: 0.76rem;
+    .nav-contact-btn {
+      text-decoration: none;
+      background: #f5f5f4;
+      color: #44403c;
+      font-size: 0.85rem;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      opacity: 0.8;
-      margin-bottom: 2px;
-    }
-
-    .btn-value {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .btn-arrow {
-      margin-left: 8px;
-      opacity: 0.4;
-      display: flex;
-      align-items: center;
+      padding: 8px 14px;
+      border-radius: 20px;
       transition: all 0.2s;
     }
 
-    .btn:hover .btn-arrow {
-      opacity: 1;
-      transform: translateX(3px);
+    .nav-contact-btn:hover {
+      background: #e7e5e4;
+      color: #1c1917;
     }
 
-    /* 1. CALL BUTTON */
-    .btn-call {
-      background: var(--call-bg);
-      border-color: var(--call-border);
-      color: var(--call-color);
-    }
-    .btn-call .btn-icon {
-      background: var(--call-color);
-      fill: #ffffff;
-    }
-
-    /* 2. WHATSAPP BUTTON */
-    .btn-wa {
-      background: var(--wa-bg);
-      border-color: var(--wa-border);
-      color: var(--wa-color);
-    }
-    .btn-wa .btn-icon {
-      background: #25d366;
-      fill: #ffffff;
+    /* 2. MAIN SHOWCASE CONTENT */
+    .main-wrapper {
+      width: 100%;
+      max-width: 520px;
+      padding: 24px 16px 40px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* 3. INSTAGRAM BUTTON */
-    .btn-insta {
-      background: var(--insta-bg);
-      border-color: var(--insta-border);
-      color: var(--insta-color);
-    }
-    .btn-insta .btn-icon {
-      background: linear-gradient(45deg, #f09433 0%, #dc2743 50%, #bc1888 100%);
-      fill: #ffffff;
+    .showcase-card {
+      width: 100%;
+      background: var(--surface);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.03),
+        0 20px 35px -10px rgba(28, 25, 23, 0.08);
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.5s ease-out;
     }
 
-    @keyframes slideUp {
+    /* Food Photo Container */
+    .photo-container {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      background: #f5f5f4;
+      overflow: hidden;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .showcase-card:hover .photo-container img {
+      transform: scale(1.02);
+    }
+
+    .tag-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #c2410c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #ea580c;
+      border-radius: 50%;
+    }
+
+    /* Content Under Photo */
+    .card-body {
+      padding: 24px 22px 28px 22px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .dish-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .dish-desc {
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding: 0 8px;
+    }
+
+    /* Nutritional Highlights Pills */
+    .highlights-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #f5f5f4;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #57534e;
+    }
+
+    /* 3. ORDER NOW BUTTON */
+    .btn-order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 18px 24px;
+      border-radius: 18px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      box-shadow: 
+        0 10px 25px -5px rgba(234, 88, 12, 0.4),
+        0 4px 6px -2px rgba(234, 88, 12, 0.2);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .btn-order:hover {
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      transform: translateY(-2px);
+      box-shadow: 
+        0 14px 28px -5px rgba(234, 88, 12, 0.5),
+        0 6px 10px -2px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-order:active {
+      transform: scale(0.98);
+    }
+
+    .btn-order svg {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-order:hover svg {
+      transform: translateX(4px);
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(12px);
       }
       to {
         opacity: 1;
@@ -273,104 +281,57 @@
 </head>
 <body>
 
-  <div class="card">
-    <!-- Owner / About Section -->
-    <div class="owner-section">
-      <div class="avatar-wrapper">
-        <div class="avatar">V</div>
-        <div class="status-badge" title="Online / Available"></div>
-      </div>
-      <h1 class="owner-name" id="owner-name">Vedant</h1>
-      <div class="owner-badge">
-        <span class="dot"></span> Available to connect
-      </div>
-      <p class="owner-about" id="owner-about">
-        Feel free to call, message on WhatsApp, or connect on Instagram. I'll get back to you as soon as possible!
-      </p>
+  <!-- 1. NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">P</div>
+        <div class="brand-name">Premeals<span>.</span></div>
+      </a>
+      <a href="contact.html" class="nav-contact-btn">Contact</a>
     </div>
+  </header>
 
-    <div class="divider"></div>
+  <!-- 2. MAIN SECTION -->
+  <main class="main-wrapper">
+    <div class="showcase-card">
+      
+      <!-- Food Photo from User -->
+      <div class="photo-container">
+        <span class="tag-badge">Chef's Fresh Special</span>
+        <img src="premeals-bowl.jpg" alt="Premeals Nutritious Oat Bowl with Fresh Fruits and Peanut Butter" />
+      </div>
 
-    <!-- 3 Core Actions -->
-    <div class="actions">
-      <!-- 1. CALL BUTTON (Phone number with call icon) -->
-      <a href="tel:+917224098359" id="call-link" class="btn btn-call">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-        </div>
-        <div class="btn-content">
-          <span class="btn-label">Call Directly</span>
-          <span class="btn-value" id="call-display">+91 72240 98359</span>
-        </div>
-        <div class="btn-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </div>
-      </a>
+      <!-- Card Body Content -->
+      <div class="card-body">
+        <h1 class="dish-title">Nutritious Fruit & Oat Bowl</h1>
+        <p class="dish-desc">
+          Creamy rolled oats layered with fresh strawberries, blueberries, banana slices, crunchy granola & natural peanut butter. Handcrafted fresh for every order!
+        </p>
 
-      <!-- 2. WHATSAPP CHAT BUTTON -->
-      <a href="https://wa.me/917224098359" id="chat-link" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.83 2.41c-1.47 0-2.93-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.186 8.186 0 0 1-1.26-4.38c0-4.54 3.7-8.25 8.27-8.25zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
-          </svg>
+        <!-- Highlights -->
+        <div class="highlights-row">
+          <span class="pill">🍓 100% Fresh Fruits</span>
+          <span class="pill">🥣 High Fiber Oats</span>
+          <span class="pill">🥜 Natural Peanut Butter</span>
         </div>
-        <div class="btn-content">
-          <span class="btn-label">Instant Chat</span>
-          <span class="btn-value">WhatsApp</span>
-        </div>
-        <div class="btn-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </div>
-      </a>
 
-      <!-- 3. INSTAGRAM LINK -->
-      <a href="https://instagram.com" id="insta-link" target="_blank" rel="noopener noreferrer" class="btn btn-insta">
-        <div class="btn-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        <!-- 3. ORDER NOW BUTTON (Opens Contact Page) -->
+        <a href="contact.html" class="btn-order">
+          <span>Order Now</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
+        </a>
+
+        <div class="footer-note">
+          Instant order via Direct Call, WhatsApp & Instagram
         </div>
-        <div class="btn-content">
-          <span class="btn-label">Social</span>
-          <span class="btn-value">Instagram</span>
-        </div>
-        <div class="btn-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </div>
-      </a>
+      </div>
+
     </div>
-  </div>
+  </main>
 
-  <script>
-    // Customize dynamically if query parameters are present
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name');
-    const about = params.get('about');
-    const phone = params.get('phone');
-    const wa = params.get('wa') || params.get('whatsapp');
-    const insta = params.get('insta') || params.get('instagram');
-
-    if (name) document.getElementById('owner-name').textContent = name;
-    if (about) document.getElementById('owner-about').textContent = about;
-    if (phone) {
-      document.getElementById('call-display').textContent = phone;
-      document.getElementById('call-link').href = `tel:${phone.replace(/[^0-9+]/g, '')}`;
-    }
-    if (wa) {
-      document.getElementById('chat-link').href = `https://wa.me/${wa.replace(/[^0-9]/g, '')}`;
-    }
-    if (insta) {
-      const cleanInsta = insta.startsWith('http') ? insta : `https://instagram.com/${insta.replace('@', '')}`;
-      document.getElementById('insta-link').href = cleanInsta;
-    }
-  </script>
 </body>
 </html>

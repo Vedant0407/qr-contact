@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Premeals | Order & Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --card-bg: #ffffff;
+      --text-main: #1c1917;
+      --text-secondary: #57534e;
+      --text-muted: #a8a29e;
+      --border: #f0ede8;
+      --call-color: #059669;
+      --call-bg: #ecfdf5;
+      --call-border: #a7f3d0;
+      --wa-color: #15803d;
+      --wa-bg: #f0fdf4;
+      --wa-border: #bbf7d0;
+      --insta-color: #be185d;
+      --insta-bg: #fdf2f8;
+      --insta-border: #fbcfe8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 0%, #fffbeb 0%, #fafaf9 60%, #f5f5f4 100%);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 390px;
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.04),
+        0 20px 40px -15px rgba(28, 25, 23, 0.07),
+        0 0 0 1px rgba(231, 229, 228, 0.7);
+      display: flex;
+      flex-direction: column;
+      animation: slideUp 0.4s ease-out;
+    }
+
+    /* Back Link */
+    .back-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 12px;
+      background: #f5f5f4;
+      transition: all 0.2s;
+    }
+
+    .back-nav:hover {
+      background: #e7e5e4;
+      color: var(--text-main);
+    }
+
+    /* Owner / About Section */
+    .owner-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px -4px rgba(249, 115, 22, 0.35);
+      border: 3px solid #ffffff;
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 15px;
+      height: 15px;
+      background: #10b981;
+      border: 2.5px solid #ffffff;
+      border-radius: 50%;
+    }
+
+    .owner-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .owner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      padding: 3px 10px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #166534;
+    }
+
+    .owner-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: #16a34a;
+      border-radius: 50%;
+    }
+
+    .owner-about {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      padding: 0 6px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    /* Actions List */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 18px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      border: 1.5px solid transparent;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 14px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover .btn-icon {
+      transform: scale(1.05);
+    }
+
+    .btn-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .btn-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .btn-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      opacity: 0.8;
+      margin-bottom: 2px;
+    }
+
+    .btn-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-arrow {
+      margin-left: 8px;
+      opacity: 0.4;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+    }
+
+    .btn:hover .btn-arrow {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    /* 1. CALL BUTTON */
+    .btn-call {
+      background: var(--call-bg);
+      border-color: var(--call-border);
+      color: var(--call-color);
+    }
+    .btn-call .btn-icon {
+      background: var(--call-color);
+      fill: #ffffff;
+    }
+
+    /* 2. WHATSAPP BUTTON */
+    .btn-wa {
+      background: var(--wa-bg);
+      border-color: var(--wa-border);
+      color: var(--wa-color);
+    }
+    .btn-wa .btn-icon {
+      background: #25d366;
+      fill: #ffffff;
+    }
+
+    /* 3. INSTAGRAM BUTTON */
+    .btn-insta {
+      background: var(--insta-bg);
+      border-color: var(--insta-border);
+      color: var(--insta-color);
+    }
+    .btn-insta .btn-icon {
+      background: linear-gradient(45deg, #f09433 0%, #dc2743 50%, #bc1888 100%);
+      fill: #ffffff;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Back to Home -->
+    <a href="index.html" class="back-nav">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Premeals
+    </a>
+
+    <!-- Owner / About Section -->
+    <div class="owner-section">
+      <div class="avatar-wrapper">
+        <div class="avatar">P</div>
+        <div class="status-badge" title="Accepting Orders"></div>
+      </div>
+      <h1 class="owner-name" id="owner-name">Premeals by Vedant</h1>
+      <div class="owner-badge">
+        <span class="dot"></span> Accepting Orders
+      </div>
+      <p class="owner-about" id="owner-about">
+        Fresh, healthy & delicious handcrafted meal bowls. Tap below to call or message directly on WhatsApp to place your order!
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 3 Core Actions -->
+    <div class="actions">
+      <!-- 1. CALL BUTTON -->
+      <a href="tel:+917224098359" id="call-link" class="btn btn-call">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-label">Call to Order</span>
+          <span class="btn-value" id="call-display">+91 72240 98359</span>
+        </div>
+        <div class="btn-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 2. WHATSAPP CHAT BUTTON -->
+      <a href="https://wa.me/917224098359?text=Hi%20Premeals!%20I%20would%20like%20to%20place%20an%20order." id="chat-link" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.18 8.18 0 0 1-5.83 2.41c-1.47 0-2.93-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.186 8.186 0 0 1-1.26-4.38c0-4.54 3.7-8.25 8.27-8.25zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-label">WhatsApp Order</span>
+          <span class="btn-value">Order on WhatsApp</span>
+        </div>
+        <div class="btn-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- 3. INSTAGRAM BUTTON -->
+      <a href="https://instagram.com" id="insta-link" target="_blank" rel="noopener noreferrer" class="btn btn-insta">
+        <div class="btn-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <div class="btn-content">
+          <span class="btn-label">Instagram</span>
+          <span class="btn-value">Follow @premeals</span>
+        </div>
+        <div class="btn-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
